@@ -1,0 +1,119 @@
+<%= form_for(@rotator_setting, url: admin_rotator_settings_path) do |f| %>
+  <% if @rotator_setting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rotator_setting.errors.count, "error") %> prohibited this rotator_setting from being saved:</h2>
+
+      <ul>
+      <% @rotator_setting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="row" data-hook="admin_page_form_fields">
+    <div class="col-md-6" data-hook="admin_page_form_left">
+      <div class="form-group">
+        <%= f.label :totalFrames %>
+        <%= f.number_field :totalFrames, class: 'form-control' %>
+        <%= f.error_message_on :totalFrames %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :endFrame %>
+        <%= f.number_field :endFrame, class: 'form-control' %>
+        <%= f.error_message_on :endFrame %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :currentFrame %>
+        <%= f.number_field :currentFrame, class: 'form-control' %>
+        <%= f.error_message_on :currentFrame %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :framerate %>
+        <%= f.number_field :framerate, class: 'form-control' %>
+        <%= f.error_message_on :framerate %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :imgList %>
+        <%= f.text_field :imgList, class: 'form-control' %>
+        <%= f.error_message_on :imgList %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :progress %>
+        <%= f.text_field :progress, class: 'form-control' %>
+        <%= f.error_message_on :progress %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :imagePath %>
+        <%= f.text_field :imagePath, class: 'form-control' %>
+        <%= f.error_message_on :imagePath %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :filePrefix %>
+        <%= f.text_field :filePrefix, class: 'form-control' %>
+        <%= f.error_message_on :filePrefix %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :ext %>
+        <%= f.text_field :ext, class: 'form-control' %>
+        <%= f.error_message_on :ext %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :height %>
+        <%= f.number_field :height, class: 'form-control' %>
+        <%= f.error_message_on :height %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :width %>
+        <%= f.number_field :width, class: 'form-control' %>
+        <%= f.error_message_on :width %>
+      </div>
+
+      <div class="checkbox field">
+        <%= f.label :disableSpin do %>
+          <%= f.check_box :disableSpin %>
+          disableSpin
+        <% end %>
+        <%= f.error_message_on :disableSpin %>
+      </div>
+
+      <div class="checkbox field">
+        <%= f.label :zeroPadding  do %>
+          <%= f.check_box :zeroPadding %>
+          zeroPadding
+        <% end %>
+        <%= f.error_message_on :zeroPadding %>
+      </div>
+
+      <div class="checkbox field">
+        <%= f.label :navigation do %>
+          <%= f.check_box :navigation %>
+          navigation
+        <% end %>
+        <%= f.error_message_on :navigation %>
+      </div>
+
+      <div class="form-actions" data-hook="buttons">
+        <%= f.submit class: 'btn btn-primary btn-success' do %>
+          <span class="icon icon-refresh"></span> Update
+        <% end %>
+        <span class="or">or</span>
+        <%= link_to admin_rotator_settings_path, class: 'btn btn-default', icon: 'delete' do %>
+          <span class="icon icon-delete"></span> Cancel
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+<% end %>

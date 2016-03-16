@@ -1,0 +1,8 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:editing_resource, resource: Spree::RotatorSetting.model_name.human) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:back_to_resource_list, resource: plural_resource_name(Spree::RotatorSetting)), spree.admin_rotator_settings_path, icon: 'arrow-left', class: 'btn-primary' %>
+<% end %>
+<%= render 'form' %>

@@ -1,0 +1,17 @@
+/*
+ *= require spree/frontend/threesixty
+*/
+
+.threesixty_images {
+  cursor: move;
+}
+
+#three-sixty-controls {
+  margin: 0 auto;
+  width: 255px;
+}
+
+#three-sixty-stop,
+#three-sixty-play {
+  width: 85px;
+}

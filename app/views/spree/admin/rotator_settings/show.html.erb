@@ -1,0 +1,89 @@
+<div class="content-header  page-header">
+  <div class="row">
+      <h1 class="col-sm-6">
+          Three Sixty Rotator Settings
+      </h1>
+
+      <div class="page-actions col-sm-6" data-hook="toolbar">
+          <!-- <a class="btn btn-success" icon="add" id="admin_new_store_link" href="http://localhost:3000/admin/stores/new"><span class="icon icon-add"></span> New Store</a> -->
+          <% if Spree::RotatorSetting.count > 1 %>
+            <%= link_to edit_admin_rotator_settings_path, class:'btn btn-primary', icon: 'edit' do  %>
+              <span class="icon icon-edit"></span> Edit
+            <% end %>
+          <% else %>
+            <%= link_to 'Add Rotator setting', new_admin_rotator_settings_path, class:'btn btn-success' %>
+          <% end %>
+      </div>
+
+  </div>
+</div>
+
+<% if Spree::RotatorSetting.count > 1 %>
+
+
+<table class="table" id="listing_rotator_settings" data-hook>
+  <tr>
+    <th>totalFrames</th>
+    <td><%= @rotator_setting.totalFrames %></td>
+  </tr>
+  <tr>
+    <th>endFrame</th>
+    <td><%= @rotator_setting.endFrame %></td>
+  </tr>
+  <tr>
+    <th>currentFrame</th>
+    <td><%= @rotator_setting.currentFrame %></td>
+  </tr>
+  <tr>
+    <th>framerate</th>
+    <td><%= @rotator_setting.framerate %></td>
+  </tr>
+  <tr>
+    <th>imgList</th>
+    <td><%= @rotator_setting.imgList %></td>
+  </tr>
+  <tr>
+    <th>progress</th>
+    <td><%= @rotator_setting.progress %></td>
+  </tr>
+  <tr>
+    <th>imagePath</th>
+    <td><%= @rotator_setting.imagePath %></td>
+  </tr>
+  <tr>
+    <th>filePrefix</th>
+    <td><%= @rotator_setting.filePrefix %></td>
+  </tr>
+  <tr>
+    <th>ext</th>
+    <td><%= @rotator_setting.ext %></td>
+  </tr>
+  <tr>
+    <th>height</th>
+    <td><%= @rotator_setting.height %></td>
+  </tr>
+  <tr>
+    <th>width</th>
+    <td><%= @rotator_setting.width %></td>
+  </tr>
+  <tr>
+    <th>disableSpin</th>
+    <td><%= @rotator_setting.disableSpin %></td>
+  </tr>
+  <tr>
+    <th>zeroPadding</th>
+    <td><%= @rotator_setting.zeroPadding %></td>
+  </tr>
+  <tr>
+    <th>navigation</th>
+    <td><%= @rotator_setting.navigation %></td>
+  </tr>
+</table>
+  <%= link_to edit_admin_rotator_settings_path, class: 'btn btn-primary' do %>
+    <span class="icon icon-edit"></span> Edit
+  <% end %>
+<% else %>
+  <%= link_to new_admin_rotator_settings_path, class: 'btn btn-success' do %>
+    <span class="icon icon-new"></span> Add Rotator setting
+  <% end %>
+<% end %>
