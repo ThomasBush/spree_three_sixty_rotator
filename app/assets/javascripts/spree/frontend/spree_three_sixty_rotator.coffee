@@ -27,7 +27,7 @@ init_product_rotator = (url) ->
     imagePath: url + 'images/'
     filePrefix: ''
     ext: '.jpg'
-    height: 460
+    height: 480
     width: 360
     disableSpin: true
     zeroPadding: true
