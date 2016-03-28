@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_three_sixty_rotator'
-  s.version     = '0.0.4'
+  s.version     = '0.0.5'
   s.summary     = 'Spree extension to add threesixty rotator functionality to products'
   s.description = 'Spree extension to add threesixty rotator functionality to products'
   s.required_ruby_version = '>= 2.0.0'
