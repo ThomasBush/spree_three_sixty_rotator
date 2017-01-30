@@ -14,4 +14,4 @@ Deface::Override.new(:virtual_path => 'spree/products/show',
                      :name => 'add_code_to_product_show',
                      :set_attributes => "[data-hook='product_show']",
                      :attributes => {'data-product-rotator-url' =>
-                            "<% if Spree::RotatorSetting.any? %><%= Spree::RotatorSetting.first.imagePath %><% end %><%= @product.rotator_url %>"})
+                            "<%= @product.rotator_url %>"})

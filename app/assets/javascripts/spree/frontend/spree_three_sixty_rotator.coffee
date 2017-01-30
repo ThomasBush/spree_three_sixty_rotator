@@ -5,8 +5,18 @@ $(document).on 'ready page:load', ->
   if $('body#product-details').length > 0
     $('#three-sixty-stop').hide()
 
-    product_rotator_url = $("div[data-hook='product_show']").data('product-rotator-url')
-    init_product_rotator(product_rotator_url)
+    product_rotator = $("div[data-hook='product_show']")
+    product_rotator_url  = product_rotator.data('product-rotator-url')
+    if product_rotator_url != ""
+
+      if ( product_rotator.data('product-type') == 'eyewear' )
+        product_rotator_width = 480
+      else
+        product_rotator_width = 360
+
+      console.log product_rotator_width
+      product_rotator_height = 480 
+      init_product_rotator(product_rotator_url, product_rotator_height, product_rotator_width)
 
 $(document).on 'click', '#three-sixty-play', ->
   $('#three-sixty-play').hide()
@@ -16,7 +26,7 @@ $(document).on 'click', '#three-sixty-stop', ->
   $('#three-sixty-stop').hide()
   $('#three-sixty-play').show()
 
-init_product_rotator = (url) ->
+init_product_rotator = (url, height, width) ->
   product_slider = $('.product_slider').ThreeSixty(
     totalFrames: 36
     endFrame: 36
@@ -24,11 +34,11 @@ init_product_rotator = (url) ->
     framerate: 60
     imgList: '.threesixty_images'
     progress: '.spinner'
-    imagePath: url + 'images/'
+    imagePath: url
     filePrefix: ''
     ext: '.jpg'
-    height: 480
-    width: 360
+    height: height
+    width: width
     disableSpin: true
     zeroPadding: true
     navigation: false)
