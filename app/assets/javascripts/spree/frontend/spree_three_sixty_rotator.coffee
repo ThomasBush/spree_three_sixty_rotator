@@ -14,7 +14,6 @@ $(document).on 'ready page:load', ->
       else
         product_rotator_width = 360
 
-      console.log product_rotator_width
       product_rotator_height = 480 
       init_product_rotator(product_rotator_url, product_rotator_height, product_rotator_width)
 
